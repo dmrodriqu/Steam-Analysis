@@ -12,7 +12,7 @@ while(True):
 		tsLog = last
 		last = log.readline().strip()
 
-	if int(last) < lastInterval:
+	if int(tsLog) < lastInterval:
 		log.write(str(time.time()))
 		scheduledPull()
 
