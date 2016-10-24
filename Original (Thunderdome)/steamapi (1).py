@@ -7,7 +7,7 @@ import json, sqlite3, time, random
 
 
 #steam_base = 76561197960265728
-#steam_max_num = (76561198119092339-76561197960265728-1)/2 #my smurf from ~sept's ID, deconstructed
+#steam_max_num = (76561198119092339-76561197960265728-1)/2 #my smurf from ~sept 2014's ID, deconstructed
 
 class caller:
     def __init__(self, key, db):

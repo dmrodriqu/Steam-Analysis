@@ -59,8 +59,8 @@ class caller:
         playerlist = userInfoParsed['response']['players']
         testct = 0
         for p in playerlist:
-            testct = testct + 1
             if p['communityvisibilitystate'] == 3 and 'lastlogoff' in p and time.time() - p['lastlogoff'] <= 1209600:
+                testct = testct + 1
                 #user info
                 thisId = p['steamid']
                 
@@ -82,6 +82,7 @@ class caller:
                         str(friendCount)+",'"+\
                         str(country)+"',"+\
                         str(p['timecreated'])+")")
+
 
         #so we don't go over the steam call limit when collecting info
         return testct
