@@ -2,16 +2,16 @@
 sqlite3 ../../../SteamAnalysis.db
 
 -- setup commands
-create table userlist (
-	user_id varchar(100)
-	,friend_count int 
-	,country varchar(100)
-	,created timestamp
-)
-
-create table user_game (
-	user_id
-	,game_id
-	,inserted timestamp
-	,time_played
-)
+-- sqlite ints are huge...
+create table users (
+	user_id integer
+	,friend_count integer
+	,country varchar(20)
+	,created integer
+);
+create table user_games (
+	user_id integer 
+	,game_id integer
+	,inserted numeric
+	,time_played integer
+);

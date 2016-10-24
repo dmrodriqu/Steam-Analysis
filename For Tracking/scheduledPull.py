@@ -1,5 +1,5 @@
 from urllib import request
-import json, sqlite3, time, random
+import json, sqlite3, time
 from caller import caller 
 from configs import dbName, keyLoc
 
