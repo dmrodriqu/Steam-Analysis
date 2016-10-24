@@ -26,6 +26,7 @@ count = 0
 lastCount = 0 
 #don't go over call limit (steam = 100k/day)
 while count < 99000:
+    print(count)
     idstring = idm.make_id()
     for j in range(99):
         idstring = idstring + ","+ idm.make_id()
@@ -33,9 +34,7 @@ while count < 99000:
     except: 
         print("Error Communicating With Host. Sleeping.")
         time.sleep(60)
-    if count > lastCount + 100:
-        lastCount = lastCount + 100
-        print(count)
+
 
 
 
