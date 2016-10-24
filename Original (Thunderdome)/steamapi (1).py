@@ -126,7 +126,7 @@ class steam_id_maker:
 
 #muh key
 #instances
-c = caller("2B287E0CA6E57C7D4671FAF310CA707A", 'Comp.db')
+c = caller('key', 'Comp.db')
 idm = steam_id_maker()
 
 count = 0 

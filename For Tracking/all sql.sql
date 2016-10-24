@@ -1,5 +1,5 @@
--- command prompt level
-sqlite3 SteamAnalysis
+-- command prompt
+sqlite3 ../../../SteamAnalysis.db
 
 -- setup commands
 create table userlist (
