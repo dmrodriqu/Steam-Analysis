@@ -15,3 +15,27 @@ create table user_games (
 	,inserted numeric
 	,time_played integer
 );
+
+--delete duplicates
+delete from users 
+where user_id in 
+	(
+		select 
+			user_id
+		from 
+		(
+			select 
+				user_id
+				,count(*) as ct
+			from users
+			group by user_id
+		)
+		where ct > 1
+	)
+;
+
+--export copy of userlist (just in case)
+.headers on 
+.mode csv
+.output userlist.csv
+select * from users;

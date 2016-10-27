@@ -35,8 +35,10 @@ class caller:
         cursor = self.conn.cursor()
         idList = cursor.execute('SELECT distinct user_id from users').fetchall()
         ids = [entry[0] for entry in idList]
+        ct = 0 
         # just pulled all the ids from our id list. Steam chokes @100k calls a day so we'll do 30k x 3
         for userId in ids:
+            ct = ct + 1
             try:
                 gameListParsed = self.getResp(userId, "IPlayerService", "GetOwnedGames", "v0001")   
                 if('games' in gameListParsed['response']):
@@ -51,6 +53,7 @@ class caller:
                                 str(g['playtime_forever'])+")")
             except: 
                 print("Error updating " + str(userId))
+            print(ct)
 
 
     def getUsers(self, userIds):
