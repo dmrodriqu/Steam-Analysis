@@ -53,7 +53,8 @@ class caller:
                                 str(g['playtime_forever'])+")")
             except: 
                 print("Error updating " + str(userId))
-            print(ct)
+            if ct%5000 == 0:
+                    print(ct)
 
 
     def getUsers(self, userIds):
